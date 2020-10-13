@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+vlan 100
+ name Data
+vlan 200
+ name Voice
+vlan 300
+ name Wifi
+vlan 400
+ name Secret
+vlan 600
+ name Ultimate
