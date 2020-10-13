@@ -1,0 +1,24 @@
+## Nornir config file 2.nogwat
+##---
+##core:
+##  num_workers: 100
+##
+##inventory:
+##  plugin: "nornir.plugins.inventory.simple.SimpleInventory"
+##  options:
+##    host_file: "~network-automation/SCRIPTS/nornir/inventory/hosts.yaml"
+##    group_file: "~network-automation/SCRIPTS/nornir/inventory/groups.yaml"
+##    default_file: "~network-automation/SCRIPTS/nornir/inventory/defaults.yaml"
+
+##Nornir 3.0 Config file
+inventory:
+    plugin: SimpleInventory
+    options:
+        host_file: "/home/patrick/network-automation/SCRIPTS/nornir/inventory/hosts.yaml"
+        group_file: "/home/patrick/network-automation/SCRIPTS/nornir/inventory/groups.yaml"
+        defaults_file: "/home/patrick/network-automation/SCRIPTS/nornir/inventory/defaults.yaml"
+
+runner:
+    plugin: threaded
+    options:
+        num_workers: 20

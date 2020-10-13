@@ -1,0 +1,5 @@
+## Nornir defaults file
+---
+platform: ios
+username: patrick
+password: cisco

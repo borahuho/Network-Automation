@@ -1,0 +1,26 @@
+## Nornir hosts file
+---
+CSR1:
+    hostname: 192.168.35.101
+    groups:
+      - CSR_Routers
+
+CSR2:
+    hostname: 192.168.35.102
+    groups:
+      - CSR_Routers
+
+CSR3:
+    hostname: 192.168.35.103
+    groups:
+      - CSR_Routers
+
+CSR4:
+    hostname: 192.168.35.104
+    groups:
+      - CSR_Routers
+
+CSR5:
+    hostname: 192.168.35.105
+    groups:
+      - CSR_Routers
