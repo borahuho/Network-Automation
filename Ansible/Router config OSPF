@@ -1,0 +1,58 @@
+
+# For CSR Cisco router
+
+# set the hostname
+
+no service config
+
+username patrick priv 15 password cisco 
+ip domain name patrick.local
+crypto key generate rsa modulus 2048
+line vty 0 4
+login local
+transport input ssh
+
+# set IP adresses
+
+conf t
+int gi4
+ip address 192.168.1.221 255.255.255.0
+no shut
+
+sh ip int brief
+
+# P2P link between routers
+conf t
+int gi1
+ip address 10.0.0.1 255.255.255.252
+no shut
+
+# Set loopback
+conf t
+int lo0
+ip address 1.1.1.1 255.255.255.255
+no shut
+
+# Setup OSPF
+
+conf t 
+router ospf 1
+network 10.0.0.0 0.0.0.255 area 0
+
+int lo0 
+ip ospf 1 area 0
+
+end
+
+sh ip ospf int brief
+sh ip ospf neigh
+
+sh run | sec ospf 
+sh run | sec router ospf 
+
+
+
+
+
+
+

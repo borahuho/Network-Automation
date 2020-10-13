@@ -1,0 +1,19 @@
+---
+
+- hosts: routers
+  connection: network_cli
+  gather_facts: false
+
+  tasks:
+  - name: Configure a login banner
+    ios_banner:
+      banner: login
+      text: |
+        This is my login banner
+        That has multiple lines
+      state: present
+
+  - name: remove motd banner
+    ios_banner:
+      banner: motd
+      state: absent

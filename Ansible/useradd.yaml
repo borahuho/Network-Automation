@@ -1,0 +1,14 @@
+---
+
+- hosts: routers
+  connection: network_cli
+  gather_facts: false
+
+  tasks:
+  - name: Push config file
+    ios_config:
+      src: "~/network-automation/config.txt"
+  
+  - name: save running config when modified
+    ios_config:
+      save_when: modified
